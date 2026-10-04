@@ -12,27 +12,27 @@ Dự án này là một phiên bản mô phỏng lệnh `ls(1)` của hệ đi�
 ## Các tính năng đã triển khai
 Chương trình hoạt động chính xác theo tài liệu manual page được cung cấp, bao gồm đầy đủ 19 cờ tùy chọn:
 
-| Cờ (Flag) | Ý nghĩa / Chức năng |
+| Cờ | Ý nghĩa / Chức năng |
 | :---: | :--- |
-| `-a` | Hiển thị tất cả các tệp, bao gồm cả tệp ẩn (bắt đầu bằng dấu `.`). |
+| `-a` | Hiển thị tất cả các tệp, bao gồm cả tệp ẩn. |
 | `-A` | Hiển thị các tệp ẩn, nhưng bỏ qua hai thư mục gốc là `.` và `..`. |
-| `-l` | Hiển thị định dạng dài (quyền truy cập, số liên kết, chủ sở hữu, nhóm, kích thước, thời gian). |
+| `-l` | Hiển thị định dạng dài. |
 | `-n` | Hoạt động giống `-l` nhưng hiển thị UID và GID dưới dạng số thay vì tên. |
 | `-s` | Hiển thị số lượng block hệ thống thực tế mà tệp đang chiếm dụng. |
-| `-k` | Sửa đổi cờ `-s`, hiển thị số lượng block theo đơn vị Kilobytes (1024 bytes). |
-| `-h` | Hiển thị kích thước tệp ở định dạng con người dễ đọc (Ví dụ: 1.5K, 234M, 2G). |
-| `-i` | In số sê-ri của tệp (mã Inode) ra trước thông tin tệp. |
-| `-F` | Thêm ký hiệu nhận dạng loại tệp (`/` cho thư mục, `*` cho file thực thi, `@` cho symlink...). |
+| `-k` | Sửa đổi cờ `-s`, hiển thị số lượng block theo đơn vị Kilobytes. |
+| `-h` | Hiển thị kích thước tệp ở định dạng con người dễ đọc. |
+| `-i` | In số sê-ri của tệp ra trước thông tin tệp. |
+| `-F` | Thêm ký hiệu nhận dạng loại tệp. |
 | `-q` | Ép in các ký tự không in được trong tên tệp dưới dạng dấu `?`. |
-| `-w` | In thô (raw) các ký tự không in được thay vì thay thế bằng dấu `?`. |
-| `-t` | Sắp xếp danh sách tệp theo thời gian sửa đổi (tệp mới nhất hiện lên trước). |
-| `-S` | Sắp xếp danh sách tệp theo kích thước (tệp lớn nhất hiện lên trước). |
-| `-r` | Đảo ngược thứ tự sắp xếp (Ví dụ: từ Z-A, hoặc tệp cũ nhất trước, tệp nhỏ nhất trước). |
+| `-w` | In thô các ký tự không in được thay vì thay thế bằng dấu `?`. |
+| `-t` | Sắp xếp danh sách tệp theo thời gian sửa đổi. |
+| `-S` | Sắp xếp danh sách tệp theo kích thước. |
+| `-r` | Đảo ngược thứ tự sắp xếp. |
 | `-f` | Tắt chức năng sắp xếp, in tệp ra theo đúng thứ tự thô trên ổ đĩa. |
-| `-c` | Sử dụng thời gian thay đổi trạng thái (ctime) để hiển thị hoặc sắp xếp. |
-| `-u` | Sử dụng thời gian truy cập gần nhất (atime) để hiển thị hoặc sắp xếp. |
+| `-c` | Sử dụng thời gian thay đổi trạng thái để hiển thị hoặc sắp xếp. |
+| `-u` | Sử dụng thời gian truy cập gần nhất để hiển thị hoặc sắp xếp. |
 | `-R` | Liệt kê đệ quy nội dung của tất cả các thư mục con. |
-| `-d` | Xử lý thư mục được truyền vào như một tệp thông thường (không liệt kê nội dung bên trong). |
+| `-d` | Xử lý thư mục được truyền vào như một tệp thông thường. |
 
 ## Cấu trúc mã nguồn
 - `main.c`: Phân tích tham số đầu vào bằng hàm `getopt()` và điều hướng luồng chương trình.
